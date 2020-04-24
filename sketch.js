@@ -21,21 +21,18 @@ function setup() {
 function draw() {
   background("red");
 
-
-  car.velocityX = carSpeed;
-
   deformation = 0.5*carWeight*carSpeed*carSpeed/22500
 
   if(car.sprite.collide(wall)){
     car.velocityX = 0;
     if(deformation<100){
-      car.shapeColor = (0,225,0);
+      car.sprite.shapeColor = color(0,255,0);
     }
     if(deformation<180 && deformation > 100){
-      car.shapeColor = color(230,230,0);
+      car.sprite.shapeColor = color(230,230,0);
     }
     if(deformation>180){
-      car.shapeColor = color(255,0,0);
+      car.sprite.shapeColor = color(255,0,0);
     }
   }
 
